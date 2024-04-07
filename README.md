@@ -1,5 +1,5 @@
 ## Assessing high-performance lightweight compression formats for Geospatial computation
-Cambridge MRes Project
+Cambridge Sensor CDT MRes Project
 
 _Beating main memory bandwidths in geospatial pipelines via fast in-memory compression_
 
