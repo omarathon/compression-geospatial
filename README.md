@@ -1,7 +1,8 @@
 ## Assessing high-performance lightweight compression formats for Geospatial computation
-Cambridge Sensor CDT MRes Project
 
 _Beating main memory bandwidths in geospatial pipelines via fast in-memory compression_
+
+Cambridge Sensor CDT MRes Project
 
 Author: Omar Tanner (`omsst2`)
 
