@@ -8,7 +8,7 @@ Author: Omar Tanner (`omsst2`)
 
 ### Files
 
-Core codecs implemented in the `codecs` directory and bundled in `codec_collection.h`
+`codecs/*`: core codecs implementing the `codecs/generic_codecs.h` inteface
 
 Main programs:
 * `test_comp.cpp`: test codecs
@@ -16,6 +16,7 @@ Main programs:
 * `bench_pipeline.cpp`: benchmark geospatial pipelines
 
 Additional files:
+* `codec_collection.h`: bundled codecs
 * `test_remappings.cpp`: verifies Morton remappings
 * `util.h`, `transformations.h`, `remappings.h`: CPP utilities
 * `py/*`: Python utilities
