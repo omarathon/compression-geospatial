@@ -38,3 +38,9 @@ We assume a Linux environment.
 1. `source hpc/modules.sh`
 2. replace `Makefile` with `hpc/Makefile` (the new Makefile contains compiler modifications for the HPC)
 3. `make`
+
+### Miscellanea
+
+License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+
+Full repo/data on request
