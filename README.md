@@ -1,4 +1,9 @@
-## Cambridge MRes Project:<br>"Assessing high-performance lightweight compression formats for Geospatial computation"
+## Assessing high-performance lightweight compression formats for Geospatial computation
+Cambridge MRes Project
+
+_Beating main memory bandwidths in geospatial pipelines via fast in-memory compression_
+
+Author: Omar Tanner (`omsst2`)
 
 ### Files
 
@@ -15,7 +20,7 @@ Additional files:
 * `py/*`: Python utilities
 
 ### Setup (Basic)
-We assume you're building/running in a Linux environment.
+We assume a Linux environment.
 1. install these packages with `apt-get` (you might need more, debug appropriately)
     1. `g++`, `g++-11`, `libzstd-dev`, `zlib1g-dev`, `liblzma-dev`, `libgdal-dev`, `python3-gdal`
 1. obtain the submodules in `external` and build them
