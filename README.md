@@ -15,18 +15,21 @@ Additional files:
 * `py/*`: Python utilities
 
 ### Setup (Basic)
+We assume you're building/running in a Linux environment.
+1. install these packages with `apt-get` (you might need more, debug appropriately)
+    1. `g++`, `g++-11`, `libzstd-dev`, `zlib1g-dev`, `liblzma-dev`, `libgdal-dev`, `python3-gdal`
 1. obtain the submodules in `external` and build them
 2. `make`
 
 ### Setup (Fusing Summing into Decompression)
-1. Re-build `external/FastPFor` and `external/simdcomp` from these forks:
+1. re-build `external/FastPFor` and `external/simdcomp` from these forks:
     1. FastPFor: https://github.com/omarathon/FastPFor
     1. simdcomp: https://github.com/omarathon/simdcomp
-1. Replace `codecs/custom_vec_logic_codecs.h` with `agg/custom_vec_logic_codecs.h` (the new file contains the modification to the `custom_rle_vecavx512` codec which fuses summing into decompression)
-1. Replace `bench_pipeline.cpp` with `agg/bench_pipeline.cpp`
+1. replace `codecs/custom_vec_logic_codecs.h` with `agg/custom_vec_logic_codecs.h` (the new file contains the modification to the `custom_rle_vecavx512` codec which fuses summing into decompression)
+1. replace `bench_pipeline.cpp` with `agg/bench_pipeline.cpp`
 1. `make clean && make`
 
 ### Setup (Running on HPC)
 1. `source hpc/modules.sh`
-2. Replace `Makefile` with `hpc/Makefile` (the new Makefile contains compiler modifications for the HPC)
+2. replace `Makefile` with `hpc/Makefile` (the new Makefile contains compiler modifications for the HPC)
 3. `make`
