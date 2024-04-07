@@ -23,7 +23,7 @@ Additional files:
 ### Setup (Basic)
 We assume a Linux environment.
 1. install these packages with `apt-get` (you might need more, debug appropriately)
-    1. `g++`, `g++-11`, `libzstd-dev`, `zlib1g-dev`, `liblzma-dev`, `libgdal-dev`, `python3-gdal`
+    1. `g++`, `g++-11`, `libgdal-dev`, `python3-gdal`, `liblz4-dev`, `libzstd-dev`, `zlib1g-dev`, `liblzma-dev`
 1. obtain the submodules in `external` and build them
 2. `make`
 
