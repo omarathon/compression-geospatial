@@ -1,6 +1,6 @@
 ## Assessing high-performance lightweight compression formats for Geospatial computation
 
-_Beating main memory bandwidths in geospatial pipelines with fast in-memory compression_
+_Beating main-memory bandwidths in geospatial pipelines with fast in-memory compression_
 
 Cambridge Sensor CDT MRes Project
 
