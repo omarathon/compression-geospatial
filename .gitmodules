@@ -1,0 +1,30 @@
+[submodule "external/TurboPFor"]
+	path = external/TurboPFor
+	url = https://github.com/powturbo/TurboPFor-Integer-Compression.git
+[submodule "external/2i_bench"]
+	path = external/2i_bench
+	url = https://github.com/jermp/2i_bench.git
+[submodule "external/FastPFor"]
+	path = external/FastPFor
+	url = https://github.com/lemire/FastPFor.git
+[submodule "external/MaskedVByte"]
+	path = external/MaskedVByte
+	url = https://github.com/lemire/MaskedVByte.git
+[submodule "external/dictionary"]
+	path = external/dictionary
+	url = https://github.com/lemire/dictionary
+[submodule "external/lz4"]
+	path = external/lz4
+	url = https://github.com/lz4/lz4.git
+[submodule "external/streamvbyte"]
+	path = external/streamvbyte
+	url = https://github.com/lemire/streamvbyte.git
+[submodule "external/simdcomp"]
+	path = external/simdcomp
+	url = https://github.com/lemire/simdcomp.git
+[submodule "external/FrameOfReference"]
+	path = external/FrameOfReference
+	url = https://github.com/omarathon/FrameOfReference.git
+[submodule "external/libmorton"]
+	path = external/libmorton
+	url = https://github.com/Forceflow/libmorton.git
