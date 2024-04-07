@@ -20,6 +20,7 @@ Additional files:
 * `test_remappings.cpp`: verifies Morton remappings
 * `util.h`, `transformations.h`, `remappings.h`: CPP utilities
 * `py/*`: Python utilities
+* `sh/*`: Shell performance-monitoring utilities
 
 ### Setup (Basic)
 We assume a Linux environment.
