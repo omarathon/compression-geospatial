@@ -2,7 +2,7 @@
 
 ### Files
 
-Core codecs implemented in the `codecs` directory.
+Core codecs implemented in the `codecs` directory
 
 Main programs:
 * `test_comp.cpp`: test codecs
