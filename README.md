@@ -8,7 +8,7 @@ Author: Omar Tanner (`omsst2`)
 
 ### Files
 
-Core codecs implemented in the `codecs` directory
+Core codecs implemented in the `codecs` directory and bundled in `codec_collection.h`
 
 Main programs:
 * `test_comp.cpp`: test codecs
