@@ -6,7 +6,7 @@ Cambridge Sensor CDT MRes Project
 
 Author: Omar Tanner (`omsst2`)
 
-Report: [here]([url](https://github.com/omarathon/mres/blob/main/mres_project.pdf))
+Report: [here](https://github.com/omarathon/mres/blob/main/mres_project.pdf)
 
 ### Files
 
