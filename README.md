@@ -6,6 +6,8 @@ Cambridge Sensor CDT MRes Project
 
 Author: Omar Tanner (`omsst2`)
 
+Report: [here]([url](https://github.com/omarathon/mres/blob/main/mres_project.pdf))
+
 ### Files
 
 `codecs/*`: core codecs implementing the `codecs/generic_codecs.h` inteface
