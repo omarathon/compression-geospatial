@@ -46,6 +46,6 @@ We assume a Linux environment.
 
 ### Miscellanea
 
-License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+License: GPL
 
 Full repo/data/report on request
