@@ -1,4 +1,4 @@
-## Assessing high-performance lightweight compression formats for Geospatial computation
+## Compressive Streaming for Geospatial Pipelines
 
 _Beating main-memory bandwidths in geospatial pipelines with fast in-memory compression_
 
