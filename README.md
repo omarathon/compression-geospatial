@@ -46,6 +46,8 @@ We assume a Linux environment.
 
 ### Miscellanea
 
-License: GPL
+Licence:
+* MIT for all files in `codecs`, except the TurboPFor wrapper (`codecs/turbopfor_codecs.h`), LZ4 wrapper (`codecs/lz4_codecs.h`) and 2ibench wrapper (`codecs/2ibench_codecs.h`) which are GPL.
+* GPL for everything else.
 
 Full repo/data/report on request
