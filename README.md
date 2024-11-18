@@ -2,7 +2,7 @@
 
 _Beating main-memory bandwidths in geospatial pipelines with fast in-memory compression_
 
-Cambridge Sensor CDT MRes Project
+MRes Project
 
 Author: Omar Tanner (`omsst2`)
 
