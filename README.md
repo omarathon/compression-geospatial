@@ -1,12 +1,8 @@
 ## Compressive Streaming for Geospatial Pipelines
 
-_Beating main-memory bandwidths in geospatial pipelines with fast in-memory compression_
+Beating main-memory bandwidths in geospatial pipelines with fast in-memory compression.
 
-MRes Project
-
-Author: Omar Tanner (`omsst2`)
-
-Report: [here](https://github.com/omarathon/mres/blob/main/mres_project.pdf)
+[Full Report](https://github.com/omarathon/mres/blob/main/mres_project.pdf)
 
 ### Files
 
@@ -36,6 +32,7 @@ We assume a Linux environment.
     1. FastPFor: https://github.com/omarathon/FastPFor
     1. simdcomp: https://github.com/omarathon/simdcomp
 1. replace `codecs/custom_vec_logic_codecs.h` with `agg/custom_vec_logic_codecs.h` (the new file contains the modification to the `custom_rle_vecavx512` codec which fuses summing into decompression)
+1. replace `codecs/simdcomp_codecs.h` with `agg/simdcomp_codecs.h` (same as ^)
 1. replace `bench_pipeline.cpp` with `agg/bench_pipeline.cpp`
 1. `make clean && make`
 
@@ -44,7 +41,7 @@ We assume a Linux environment.
 2. replace `Makefile` with `hpc/Makefile` (the new Makefile contains compiler modifications for the HPC)
 3. `make`
 
-### Miscellanea
+### Misc
 
 Licence:
 * MIT for all files in `codecs`, except the TurboPFor wrapper (`codecs/turbopfor_codecs.h`), LZ4 wrapper (`codecs/lz4_codecs.h`) and 2ibench wrapper (`codecs/2ibench_codecs.h`) which are GPL.
