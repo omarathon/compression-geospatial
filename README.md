@@ -2,11 +2,11 @@
 
 Beating main-memory bandwidths in geospatial pipelines with fast in-memory compression.
 
-[**Download Report**](https://raw.githubusercontent.com/omarathon/mres/main/mres_project.pdf)
+[**Download Report**](https://raw.githubusercontent.com/omarathon/compression-geospatial/main/report.pdf)
 
 ### Latest results
 
-The fused compressors have been upgraded to remove redundant stores. Now, we achieve **2-4x speedups**:
+The fused compressors have been upgraded to remove redundant stores. Now, we achieve up to **4x speedups**:
 
 ![speedup graph](speedup.png)
 
