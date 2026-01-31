@@ -2,7 +2,7 @@
 
 Beating main-memory bandwidths in geospatial pipelines with fast in-memory compression.
 
-[**Read Report**](https://github.com/omarathon/mres/blob/main/mres_project.pdf)
+[**Download Report**](https://raw.githubusercontent.com/omarathon/mres/main/mres_project.pdf)
 
 ### Latest results
 
