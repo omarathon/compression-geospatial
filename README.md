@@ -12,45 +12,70 @@ The fused compressors have been upgraded to remove redundant stores. Now, we ach
 
 ### Files
 
-`codecs/*`: core codecs implementing the `codecs/generic_codecs.h` inteface
+`src/codecs/generic/*`: base codec interfaces (`StatefulIntegerCodec`, `CompositeStatefulIntegerCodec`, `DirectAccessCodec`)
+
+`src/codecs/int32/*`: codec implementations for `int32_t` data
+
+`src/codecs/int32/codec_collection.h`: bundled codec registry (`InitCodecs`)
 
 Main programs:
-* `test_comp.cpp`: test codecs
-* `bench_comp.cpp`: benchmark codecs
-* `bench_pipeline.cpp`: benchmark geospatial pipelines
+* `bench/bench_comp.cpp`: benchmark codecs (compression ratio and speed)
+* `bench/bench_pipeline.cpp`: benchmark geospatial pipelines (decode + access transformation)
+* `tests/test_int32_codecs.cpp`: test int32 codecs
+* `tests/test_remappings.cpp`: verifies Morton and zigzag remappings
 
 Additional files:
-* `codec_collection.h`: bundled codecs
-* `test_remappings.cpp`: verifies Morton remappings
-* `util.h`, `transformations.h`, `remappings.h`: CPP utilities
+* `src/util.h`, `src/transformations.h`, `src/remappings.h`: C++ utilities
+* `src/bench_utils.h`: shared benchmark helpers (access transformations, `RunningStats`, GDAL block sampling)
+* `bench/bench_gdal_utils.h`: GDAL raster I/O helpers
 * `py/*`: Python utilities
 * `sh/*`: Shell performance-monitoring utilities
 
-### Setup (Basic)
-We assume a Linux environment.
-1. install these packages with `apt-get` (you might need more, debug appropriately)
-    1. `g++`, `g++-11`, `libgdal-dev`, `python3-gdal`, `liblz4-dev`, `libzstd-dev`, `zlib1g-dev`, `liblzma-dev`
-1. obtain the submodules in `external` and build them
-2. `make`
+### Setup
+
+We assume a Linux environment with GCC 13+ (C++23) and CMake 3.20+.
+
+1. Install packages with `apt-get` (you may need more — debug as needed):
+   ```
+   g++ libgdal-dev python3-gdal liblz4-dev libzstd-dev zlib1g-dev liblzma-dev
+   ```
+2. Obtain the submodules in `external/` and build them:
+   ```
+   git submodule update --init --recursive
+   # build FastPFor
+   cmake -S external/FastPFor -B external/FastPFor/build && cmake --build external/FastPFor/build
+   # build simdcomp
+   make -C external/simdcomp
+   # build MaskedVByte, StreamVByte, TurboPFor, FrameOfReference similarly
+   ```
+3. Configure and build:
+   ```
+   cmake -B build
+   cmake --build build
+   ```
+   Binaries are placed in `build/`: `bench_comp`, `bench_pipeline`, `test_comp`, `test_remappings`.
 
 ### Setup (Fusing Summing into Decompression)
-1. re-build `external/FastPFor` and `external/simdcomp` from these forks:
-    1. FastPFor: https://github.com/omarathon/FastPFor
-    1. simdcomp: https://github.com/omarathon/simdcomp
-1. replace `codecs/custom_vec_logic_codecs.h` with `agg/custom_vec_logic_codecs.h` (the new file contains the modification to the `custom_rle_vecavx512` codec which fuses summing into decompression)
-1. replace `codecs/simdcomp_codecs.h` with `agg/simdcomp_codecs.h` (same as ^)
-1. replace `bench_pipeline.cpp` with `agg/bench_pipeline.cpp`
-1. `make clean && make`
+
+To use the fused codec variants (`SimdCompFusedCodec`, `FastPForFusedCodec`) which write a decode-time sum into the overflow buffer:
+
+1. Re-build `external/FastPFor` and `external/simdcomp` from these forks:
+   1. FastPFor: https://github.com/omarathon/FastPFor
+   1. simdcomp: https://github.com/omarathon/simdcomp
+2. Rebuild: `cmake --build build`
+
+The fused variants are registered alongside the originals in `src/codecs/int32/codec_collection.h` and are available under the names `simdcomp_fused` and `FastPFor_fused_<codec>`.
 
 ### Setup (Running on HPC)
+
 1. `source hpc/modules.sh`
-2. replace `Makefile` with `hpc/Makefile` (the new Makefile contains compiler modifications for the HPC)
-3. `make`
+2. Adjust `CMakeLists.txt` for the HPC compiler/flags as needed (see `hpc/` for reference)
+3. `cmake -B build && cmake --build build`
 
 ### Misc
 
 Licence:
-* MIT for all files in `codecs`, except the TurboPFor wrapper (`codecs/turbopfor_codecs.h`), LZ4 wrapper (`codecs/lz4_codecs.h`) and 2ibench wrapper (`codecs/2ibench_codecs.h`) which are GPL.
+* MIT for all files in `src/codecs/`, except the TurboPFor wrapper (`turbopfor_codecs.h`) and LZ4 wrapper (`lz4_codecs.h`) which are GPL.
 * GPL for everything else.
 
 Full repo/data/report on request
