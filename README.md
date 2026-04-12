@@ -10,6 +10,12 @@ The fused compressors have been upgraded to remove redundant stores. Now, we ach
 
 ![speedup graph](speedup.png)
 
+### Fusion experiments (in progress)
+
+SIMDPFor sum fusion optimisations investigation (varying branching and cache-locality trade-offs):
+
+[**Google doc**](https://docs.google.com/document/d/1fZs7e5HcAdol82Xmwtj-q9u0QLf70hxAw0Cxfvb9NmM/edit?usp=sharing)
+
 ### Files
 
 `src/codecs/generic/*`: base codec interfaces (`StatefulIntegerCodec`, `CompositeStatefulIntegerCodec`, `DirectAccessCodec`)
