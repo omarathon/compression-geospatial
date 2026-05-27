@@ -2,7 +2,9 @@
 
 Beating main-memory bandwidths in geospatial pipelines with fast in-memory compression.
 
-[**Download Report**](https://raw.githubusercontent.com/omarathon/compression-geospatial/main/report.pdf)
+[**🔗 Development Repository**](https://github.com/omarathon/compression-geospatial-full) - Note that the development repository is much more up-to-date. This repository is merely for presentation.
+
+[**📜 Download Report**](https://raw.githubusercontent.com/omarathon/compression-geospatial/main/report.pdf)
 
 ### Latest results
 
